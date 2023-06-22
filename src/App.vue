@@ -7,8 +7,14 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import Navbar from '@/shared/ui/CustomUI/NavBar.vue'
 
+export default {
+    components: {
+        Navbar
+    }
+}
 </script>
 
 <style lang="scss">
