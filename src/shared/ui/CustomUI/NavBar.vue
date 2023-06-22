@@ -1,11 +1,14 @@
 <template>
     <div class="navbar_wrapper">
-        <div @click="$router.push('/')" class="main_link">
-            Главная
-        </div>
+<!--        <div @click="$router.push('/')" class="main_link">-->
+<!--            Главная-->
+<!--        </div>-->
         <nav class="navbar_links">
             <div class="movies_button">
-                <custom-button @click="$router.push('/movies')">Фильмы</custom-button>
+                <custom-button @click="$router.push('/')">Главная</custom-button>
+            </div>
+            <div class="movies_button">
+                <custom-button @click="$router.push('/typography')">Шрифты</custom-button>
             </div>
 <!--            <div>-->
 <!--                <router-link to="/about">Обо мне</router-link>-->
@@ -15,7 +18,7 @@
 </template>
 
 <script>
-import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue';
+import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
 
 export default {
     name: 'navbar',
@@ -30,7 +33,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    background-color: orange;
+    background-color: var(--primary);
     box-shadow: 1px 1px 5px black;
     padding: 0 20px;
 

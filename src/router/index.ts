@@ -6,6 +6,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     component: HomePage
   },
+  {
+    path: '/typography',
+    component: HomePage
+  },
 ]
 
 const router = createRouter({
