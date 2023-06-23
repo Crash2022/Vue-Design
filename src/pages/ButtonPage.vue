@@ -21,13 +21,13 @@
 
         <div class="heading_2">Icons</div>
         <div>
-            <CustomButton color="primary" icon="heart"/>
-            <CustomButton color="secondary" icon="hand"/>
-            <CustomButton color="success" icon="address-book"/>
-            <CustomButton color="info" icon="credit-card"/>
-            <CustomButton color="warning" icon="lemon"/>
-            <CustomButton color="danger" icon="hourglass"/>
-            <CustomButton color="danger" icon="hourglass" outlined/>
+            <CustomButton @click="buttonClick" color="primary" icon="heart"/>
+            <CustomButton @click="buttonClick" color="secondary" icon="hand"/>
+            <CustomButton @click="buttonClick" color="success" icon="address-book"/>
+            <CustomButton @click="buttonClick" color="info" icon="credit-card"/>
+            <CustomButton @click="buttonClick" color="warning" icon="lemon"/>
+            <CustomButton @click="buttonClick" color="danger" icon="hourglass"/>
+            <CustomButton @click="buttonClick" color="danger" icon="hourglass" outlined/>
         </div>
 
         <div class="heading_2">Sizes</div>
