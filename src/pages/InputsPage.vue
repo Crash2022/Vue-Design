@@ -21,7 +21,7 @@
                           :error="vField.fieldPassword.$errors"
                           type="password"
             />
-            <custom-input :name="'email_confirm'"
+            <custom-input :name="'password_confirm'"
                           :label="'Подтвердите пароль'"
                           :placeholder="'Подтвердите пароль'"
                           v-model:value="vField.fieldPasswordConfirm.$model"
