@@ -23,7 +23,7 @@ import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
 //     components: {
 //         CustomButton
 //     }
-// };
+// }
 </script>
 
 <style lang="scss" scoped>

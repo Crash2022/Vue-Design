@@ -24,7 +24,7 @@ const links = ref([
 //     components: {
 //
 //     }
-// };
+// }
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +37,7 @@ const links = ref([
     width: 250px;
     padding: 20px;
     transition: 0.2s;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     transform: translateX(-250px);
 
     &_isopen {
@@ -51,6 +51,7 @@ const links = ref([
         transition: 0.2s;
         font-weight: bold;
         margin-bottom: 10px;
+
         &:hover {
             color: var(--primary);
         }
