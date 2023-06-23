@@ -3,7 +3,8 @@
         <button :disabled="disabled"
                 :class="['custom_btn', `custom_btn_${color}`,
                         {'custom_btn_rounded': rounded},
-                        {'custom_btn_outlined': outlined}]"
+                        {'custom_btn_outlined': outlined},
+                        {'custom_btn_icon': icon}]"
         >
             <span v-if="icon">
                 <font-awesome-icon :icon="`fa-regular fa-${icon}`"/>

@@ -19,7 +19,7 @@
             <CustomButton @click="buttonClick" :label="'Button Outlined'" :outlined="true"/>
         </div>
 
-        <div class="heading-2">Icons</div>
+        <div class="heading_2">Icons</div>
         <div>
             <CustomButton color="primary" icon="heart"/>
             <CustomButton color="secondary" icon="hand"/>
