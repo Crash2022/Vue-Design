@@ -15,6 +15,14 @@
                @input="updateValue"
         >
         <label :for="name" class="input_label">{{label}}</label>
+        <TransitionGroup>
+            <div class="form_error"
+                 v-for="element of error"
+                 :key="element.$uid"
+            >
+                <div class="form-error__message">{{element.$message}}</div>
+            </div>
+        </TransitionGroup>
     </div>
 </template>
 

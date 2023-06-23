@@ -5,8 +5,8 @@
             <custom-input :name="'name'"
                           :label="'Имя'"
                           :placeholder="'Имя'"
-                          :value="fieldName"
-                          v-model:value="fieldName"
+                          v-model:value="vField.fieldName.$model"
+                          :error="vField.fieldName.$errors"
             />
         </form>
     </div>
@@ -14,10 +14,25 @@
 
 <script setup>
 import CustomInput from '@/shared/ui/CustomUI/CustomInput.vue'
-import {ref} from 'vue'
+import {computed, ref} from 'vue'
+import useVuelidate from '@vuelidate/core'
+import {minLength} from '@vuelidate/validators'
 
 const fieldName = ref('')
 
+const rules = computed(() => {
+    fieldName: {
+        minLength: minLength(3)
+    }
+})
+
+const vField = useVuelidate(rules, {fieldName})
+
+const submitForm = () => {
+    // v.value.$touch()
+    // if (v.value.$error) return
+    // alert('Form submitted')
+}
 </script>
 
 <style lang="scss" scoped>
