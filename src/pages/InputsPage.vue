@@ -28,6 +28,12 @@
                           :error="vField.fieldPasswordConfirm.$errors"
                           type="password"
             />
+            <custom-input :name="'secret_word'"
+                          :label="'Секретное слово'"
+                          :placeholder="'Секретное слово'"
+                          v-model:value="vField.fieldSecretWord.$model"
+                          :error="vField.fieldSecretWord.$errors"
+            />
         </form>
     </div>
 </template>
@@ -42,6 +48,9 @@ const fieldName = ref('')
 const fieldEmail = ref('')
 const fieldPassword = ref('')
 const fieldPasswordConfirm = ref('')
+const fieldSecretWord = ref('')
+
+const mustBeSecret = (value) => value.includes('frontend')
 
 const rules = computed(() => ({
     fieldName: {
@@ -56,9 +65,12 @@ const rules = computed(() => ({
     fieldPasswordConfirm: {
         sameAsPassword: helpers.withMessage('Пароли не совпадают', sameAs(fieldPassword.value))
     },
+    fieldSecretWord: {
+        fieldSecretWord: helpers.withMessage('Строка должна содержать секретное слово', mustBeSecret)
+    },
 }))
 
-const vField = useVuelidate(rules, {fieldName, fieldEmail, fieldPassword, fieldPasswordConfirm})
+const vField = useVuelidate(rules, {fieldName, fieldEmail, fieldPassword, fieldPasswordConfirm, fieldSecretWord})
 
 const submitForm = () => {
     // v.value.$touch()
