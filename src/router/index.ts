@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
+import TypographyPage from "@/pages/TypographyPage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/typography',
-    component: HomePage
+    component: TypographyPage
   },
 ]
 

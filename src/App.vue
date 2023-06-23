@@ -1,20 +1,24 @@
 <template>
-    <navbar/>
-    <div class="app">
-<!--        <div class="container">-->
+    <navbar-layout/>
+    <sidebar-layout/>
+    <div class="container">
+        <div class="content">
             <router-view></router-view>
-<!--        </div>-->
+        </div>
     </div>
 </template>
 
-<script lang="ts">
-import Navbar from '@/shared/ui/CustomUI/NavBar.vue'
+<script lang="ts" setup>
+import NavbarLayout from "@/components/Layouts/NavbarLayout.vue"
+import SidebarLayout from "@/components/Layouts/SidebarLayout.vue"
 
-export default {
-    components: {
-        Navbar
-    }
-}
+// экспорт без setup
+// export default {
+//     components: {
+//         NavbarLayout,
+//         SidebarLayout,
+//     }
+// }
 </script>
 
 <style lang="scss">

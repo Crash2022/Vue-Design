@@ -1,14 +1,11 @@
 <template>
     <div class="navbar_wrapper">
-<!--        <div @click="$router.push('/')" class="main_link">-->
-<!--            Главная-->
-<!--        </div>-->
         <nav class="navbar_links">
             <div class="movies_button">
                 <custom-button @click="$router.push('/')">Главная</custom-button>
             </div>
             <div class="movies_button">
-                <custom-button @click="$router.push('/typography')">Шрифты</custom-button>
+                <custom-button @click="$router.push('/typography')">Типография</custom-button>
             </div>
 <!--            <div>-->
 <!--                <router-link to="/about">Обо мне</router-link>-->
@@ -17,13 +14,16 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
 
-export default {
-    name: 'navbar',
-    components: {CustomButton}
-};
+// экспорт без setup
+// export default {
+//     name: 'navbar-layout',
+//     components: {
+//         CustomButton
+//     }
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -31,8 +31,7 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 50px;
+    height: var(--navbar-height);
     background-color: var(--primary);
     box-shadow: 1px 1px 5px black;
     padding: 0 20px;
@@ -44,8 +43,11 @@ export default {
         }
     }
     .navbar_links {
+        width: 100%;
         display: flex;
         align-items: center;
+        //justify-content: space-between;
+        justify-content: center;
         gap: 20px;
 
         .movies_button {
@@ -54,7 +56,7 @@ export default {
                 color: black;
 
                 &:hover {
-                    background-color: cornflowerblue;
+                    background-color: var(--button-hover-secondary);
                     color: white;
                 }
             }

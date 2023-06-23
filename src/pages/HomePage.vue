@@ -3,17 +3,21 @@
         <div class="title">
             <h1>Добро пожаловать в приложение</h1>
         </div>
+        <div class="main_image">
+            <img :src="MainPageImage" alt="main-page">
+        </div>
     </div>
 </template>
 
 <script>
+import MainPageImage from '@/shared/assets/main-page-img.png'
 export default {
-    // // импорт изображения как объект
-    // data: function () {
-    //     return {
-    //         MainImage
-    //     }
-    // }
+    // импорт изображения как объект
+    data: function () {
+        return {
+            MainPageImage
+        }
+    }
 }
 </script>
 
