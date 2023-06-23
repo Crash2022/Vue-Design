@@ -4,15 +4,19 @@
     </button>
 </template>
 
-<script>
-export default {
-    name: 'custom-button'
-};
+<script setup>
+const props = defineProps({
+
+})
+
+// export default {
+//     name: 'custom-button'
+// };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .custom_btn {
-    background-color: darkorange;
+    background-color: var(--primary);
     color: white;
     padding: 10px;
     border: none;
@@ -25,5 +29,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+        background-color: var(--primary-hover);
+    }
 }
 </style>
