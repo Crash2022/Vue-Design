@@ -18,6 +18,14 @@
         <CustomButton @click="buttonClick" :color="'danger'">
             Button Danger
         </CustomButton>
+
+        <CustomButton @click="buttonClick" :rounded="true">
+            Button Primary Rounded
+        </CustomButton>
+
+        <CustomButton @click="buttonClick" disabled>
+            Button Primary Disabled
+        </CustomButton>
     </div>
 </template>
 

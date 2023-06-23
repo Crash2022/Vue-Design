@@ -1,6 +1,9 @@
 <template>
     <div class="button_wrapper">
-        <button :class="['custom_btn', `custom_btn_${color}`]">
+        <button :disabled="disabled"
+                :class="['custom_btn', `custom_btn_${color}`,
+                        {'custom_btn_rounded': rounded}]"
+        >
             <slot></slot>
         </button>
     </div>
@@ -11,16 +14,21 @@ const props = defineProps({
     color: {
         type: String,
         default: 'primary'
-    }
+    },
+    disabled: {
+        type: Boolean,
+        required: false
+    },
+    rounded: {
+        type: Boolean,
+        required: false
+    },
 })
-
-// export default {
-//     name: 'custom-button'
-// };
 </script>
 
 <style lang="scss" scoped>
 .button_wrapper {
+    // стандартная кнопка
     .custom_btn {
         background-color: var(--primary);
         color: white;
@@ -40,6 +48,17 @@ const props = defineProps({
             background-color: var(--primary-hover);
         }
 
+        // отключенная кнопка
+        &:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+        // закругленная кнопка
+        &_rounded {
+            border-radius: 15px;
+        }
+
+        // цветовые стили
         &_secondary {
             background-color: var(--secondary);
 
