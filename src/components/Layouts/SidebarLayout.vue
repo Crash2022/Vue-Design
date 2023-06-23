@@ -52,7 +52,7 @@ const links = ref([
         border: 1px solid #d5d8ff;
         //transition: 0.1s;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
 
         &:hover {
             //border-color: var(--primary);
