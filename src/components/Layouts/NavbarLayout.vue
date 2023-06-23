@@ -1,7 +1,11 @@
 <template>
     <div class="navbar_wrapper">
         <nav class="navbar_links">
-            <CustomButton @click="$router.push('/')" :label="'Главная'" :color="'warning'" :outlined="true"/>
+            <CustomButton @click="$router.push('/')"
+                          :label="'Главная'"
+                          :color="'warning'"
+                          :outlined="true"
+            />
 <!--            <div class="movies_button">-->
 <!--                <custom-button @click="$router.push('/')">Главная</custom-button>-->
 <!--            </div>-->

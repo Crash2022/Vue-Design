@@ -10,10 +10,11 @@
                :id="name"
                :name="name"
                :placeholder="placeholder"
-               :value="value"
                :error="error"
+               :value="value"
+               @input="updateValue"
         >
-        <label for="name" class="input_label"></label>
+        <label :for="name" class="input_label">{{label}}</label>
     </div>
 </template>
 
@@ -31,11 +32,12 @@ const props = defineProps({
         type: String,
         required: false
     },
-    // name для label
+    // name для form
     name: {
         type: String,
         required: true
     },
+    // label для надписи над инпутом
     label: {
         type: String,
         default: ''
@@ -49,6 +51,12 @@ const props = defineProps({
         default: '300px'
     },
 })
+
+const emit = defineEmits(['update:value'])
+
+const updateValue = (e) => {
+    emit('update:value', e.target.value)
+}
 
 // export default {
 //     name: 'custom-input',
@@ -80,24 +88,24 @@ const props = defineProps({
 }
 .input {
     &_text {
+        position: relative;
+        width: 100%;
+        z-index: 1;
         border: 1px solid var(--primary);
         padding: 0 10px;
         height: 40px;
         border-radius: 7px;
         font-size: 15px;
-        width: 100%;
-        position: relative;
-        z-index: 1;
 
         &:focus {
-            & + .input-label {
+            & + .input_label {
                 z-index: 1;
                 opacity: 1;
                 top: -20px;
             }
         }
         &:not(:placeholder-shown) {
-            & + .input-label {
+            & + .input_label {
                 z-index: 1;
                 opacity: 1;
                 top: -20px;
@@ -111,7 +119,7 @@ const props = defineProps({
         top: 20px;
         opacity: 0;
         z-index: -1;
-        transition: .3s;
+        transition: 0.3s;
         font-size: 13px;
         color: var(--primary);
     }
