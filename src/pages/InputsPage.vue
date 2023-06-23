@@ -8,6 +8,26 @@
                           v-model:value="vField.fieldName.$model"
                           :error="vField.fieldName.$errors"
             />
+            <custom-input :name="'email'"
+                          :label="'Эл.почта'"
+                          :placeholder="'Эл.почта'"
+                          v-model:value="vField.fieldEmail.$model"
+                          :error="vField.fieldEmail.$errors"
+            />
+            <custom-input :name="'email'"
+                          :label="'Пароль'"
+                          :placeholder="'Пароль'"
+                          v-model:value="vField.fieldPassword.$model"
+                          :error="vField.fieldPassword.$errors"
+                          type="password"
+            />
+            <custom-input :name="'email_confirm'"
+                          :label="'Подтвердите пароль'"
+                          :placeholder="'Подтвердите пароль'"
+                          v-model:value="vField.fieldPasswordConfirm.$model"
+                          :error="vField.fieldPasswordConfirm.$errors"
+                          type="password"
+            />
         </form>
     </div>
 </template>
@@ -16,17 +36,29 @@
 import CustomInput from '@/shared/ui/CustomUI/CustomInput.vue'
 import {computed, ref} from 'vue'
 import useVuelidate from '@vuelidate/core'
-import {helpers, minLength} from '@vuelidate/validators'
+import {helpers, minLength, email, numeric, sameAs} from '@vuelidate/validators'
 
 const fieldName = ref('')
+const fieldEmail = ref('')
+const fieldPassword = ref('')
+const fieldPasswordConfirm = ref('')
 
 const rules = computed(() => ({
     fieldName: {
         minLength: helpers.withMessage('Минимальная длина 3 символа', minLength(3))
-    }
+    },
+    fieldEmail: {
+        email: helpers.withMessage('Неверный тип e-mail', email)
+    },
+    fieldPassword: {
+        numeric: helpers.withMessage('Возможны только цифры', numeric)
+    },
+    fieldPasswordConfirm: {
+        sameAsPassword: helpers.withMessage('Пароли не совпадают', sameAs(fieldPassword.value))
+    },
 }))
 
-const vField = useVuelidate(rules, {fieldName})
+const vField = useVuelidate(rules, {fieldName, fieldEmail, fieldPassword, fieldPasswordConfirm})
 
 const submitForm = () => {
     // v.value.$touch()
