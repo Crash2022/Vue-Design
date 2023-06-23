@@ -23,6 +23,10 @@
             Button Primary Rounded
         </CustomButton>
 
+        <CustomButton @click="buttonClick" :outlined="true">
+            Button Outlined
+        </CustomButton>
+
         <CustomButton @click="buttonClick" disabled>
             Button Primary Disabled
         </CustomButton>
