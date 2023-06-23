@@ -4,7 +4,8 @@
                 :class="['custom_btn', `custom_btn_${color}`,
                         {'custom_btn_rounded': rounded},
                         {'custom_btn_outlined': outlined},
-                        {'custom_btn_icon': icon}]"
+                        {'custom_btn_icon': icon},
+                        {'custom_btn_large': size === 'large'}]"
         >
             <span v-if="icon">
                 <font-awesome-icon :icon="`fa-regular fa-${icon}`"/>
@@ -39,6 +40,11 @@ const props = defineProps({
     },
     icon: {
         type: String,
+        required: false
+    },
+    size: {
+        type: String,
+        default: 'normal',
         required: false
     },
 })
@@ -139,6 +145,11 @@ const props = defineProps({
             width: 40px;
             height: 40px;
             border-radius: 50%;
+        }
+        // размер кнопки
+        &_large {
+            height: 48px;
+            padding: 0 30px;
         }
     }
 }

@@ -29,6 +29,12 @@
             <CustomButton color="danger" icon="hourglass"/>
             <CustomButton color="danger" icon="hourglass" outlined/>
         </div>
+
+        <div class="heading_2">Sizes</div>
+        <div>
+            <CustomButton @click="buttonClick" :label="'Button Primary'"/>
+            <CustomButton @click="buttonClick" :label="'Button Primary'" :size="'large'"/>
+        </div>
     </div>
 </template>
 
@@ -44,6 +50,7 @@ const buttonClick = () => {
 .buttons_page {
     > div {
         display: flex;
+        align-items: flex-end;
         gap: 10px;
         margin-bottom: 10px;
     }
