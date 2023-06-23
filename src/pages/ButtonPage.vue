@@ -20,13 +20,14 @@
         </div>
 
         <div class="heading-2">Icons</div>
-        <div class="line">
-            <CustomButton color="primary" icon="heart" outlined/>
-            <CustomButton color="second" icon="hand"/>
-            <CustomButton color="success" icon="address-book" outlined/>
+        <div>
+            <CustomButton color="primary" icon="heart"/>
+            <CustomButton color="secondary" icon="hand"/>
+            <CustomButton color="success" icon="address-book"/>
             <CustomButton color="info" icon="credit-card"/>
-            <CustomButton color="warning" icon="lemon" outlined/>
+            <CustomButton color="warning" icon="lemon"/>
             <CustomButton color="danger" icon="hourglass"/>
+            <CustomButton color="danger" icon="hourglass" outlined/>
         </div>
     </div>
 </template>

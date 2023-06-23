@@ -132,7 +132,6 @@ const props = defineProps({
         &_rounded {
             border-radius: 15px;
         }
-
         // кнопка-иконка
         &_icon {
             padding: 0;
