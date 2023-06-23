@@ -16,15 +16,15 @@
 import CustomInput from '@/shared/ui/CustomUI/CustomInput.vue'
 import {computed, ref} from 'vue'
 import useVuelidate from '@vuelidate/core'
-import {minLength} from '@vuelidate/validators'
+import {helpers, minLength} from '@vuelidate/validators'
 
 const fieldName = ref('')
 
-const rules = computed(() => {
+const rules = computed(() => ({
     fieldName: {
-        minLength: minLength(3)
+        minLength: helpers.withMessage('Минимальная длина 3 символа', minLength(3))
     }
-})
+}))
 
 const vField = useVuelidate(rules, {fieldName})
 

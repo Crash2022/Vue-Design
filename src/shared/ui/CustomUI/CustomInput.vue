@@ -86,11 +86,12 @@ const updateValue = (e) => {
         position: relative;
     }
     &_error {
-        background: var(--danger);
+        //background: var(--danger);
         margin-top: 4px;
         border-radius: 7px;
         font-size: 13px;
-        color: #fff;
+        //color: #fff;
+        color: var(--error-text);
         padding: 5px;
     }
 }
