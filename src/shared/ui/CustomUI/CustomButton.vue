@@ -85,6 +85,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--primary-hover);
+                border: 1px solid var(--primary-hover);
             }
         }
         &_secondary {
@@ -93,6 +94,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--secondary-hover);
+                border: 1px solid var(--secondary-hover);
             }
         }
         &_success {
@@ -101,6 +103,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--success-hover);
+                border: 1px solid var(--success-hover);
             }
         }
         &_info {
@@ -109,6 +112,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--info-hover);
+                border: 1px solid var(--info-hover);
             }
         }
         &_warning {
@@ -117,6 +121,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--warning-hover);
+                border: 1px solid var(--warning-hover);
             }
         }
         &_danger {
@@ -125,6 +130,7 @@ const props = defineProps({
 
             &:hover {
                 background-color: var(--danger-hover);
+                border: 1px solid var(--danger-hover);
             }
         }
 

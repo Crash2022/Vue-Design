@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 import TypographyPage from "@/pages/TypographyPage.vue"
-import ButtonPage from "@/pages/ButtonPage.vue"
+import ButtonsPage from "@/pages/ButtonsPage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,8 +13,8 @@ const routes: Array<RouteRecordRaw> = [
     component: TypographyPage
   },
   {
-    path: '/button',
-    component: ButtonPage
+    path: '/buttons',
+    component: ButtonsPage
   },
 ]
 

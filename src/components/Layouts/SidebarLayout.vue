@@ -23,7 +23,7 @@ const props = defineProps({
 const links = ref([
     {name: 'Главная', href: '/'},
     {name: 'Типография', href: '/typography'},
-    {name: 'Кнопка', href: '/button'},
+    {name: 'Кнопки', href: '/buttons'},
 ])
 
 // экспорт без setup
