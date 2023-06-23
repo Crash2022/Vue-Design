@@ -28,7 +28,7 @@ import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
 
 <style lang="scss" scoped>
 .navbar_wrapper {
-    position: relative;
+    //position: relative;
     display: flex;
     align-items: center;
     height: var(--navbar-height);
