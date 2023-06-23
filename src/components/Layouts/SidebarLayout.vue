@@ -29,12 +29,12 @@ const links = ref([
 
 <style lang="scss" scoped>
 .sidebar {
+    position: fixed;
     left: 0;
     top: 62px;
+    width: 250px;
     height: 100%;
     background: #fff;
-    position: fixed;
-    width: 250px;
     padding: 20px;
     transition: 0.2s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);

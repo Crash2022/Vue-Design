@@ -25,10 +25,13 @@
     padding: 0;
     box-sizing: border-box;
     //font-family: Google Sans, sans-serif;
+}
+#app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .container {
     display: flex;
     flex-direction: column;
