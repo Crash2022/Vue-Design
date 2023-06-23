@@ -97,6 +97,11 @@ const updateValue = (e) => {
         border-radius: 7px;
         font-size: 15px;
 
+        &:focus-visible {
+            border: 2px solid var(--primary);
+            outline: none;
+        }
+
         &:focus {
             & + .input_label {
                 z-index: 1;
