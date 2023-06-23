@@ -1,6 +1,7 @@
 <template>
     <div class="button_wrapper">
-        <button :disabled="disabled"
+        <button @click="clickHandler"
+                :disabled="disabled"
                 :class="['custom_btn', `custom_btn_${color}`,
                         {'custom_btn_rounded': rounded},
                         {'custom_btn_outlined': outlined},
@@ -17,6 +18,12 @@
 </template>
 
 <script setup>
+const emit = defineEmits(['click'])
+
+const clickHandler = () => {
+    emit('click')
+}
+
 const props = defineProps({
     label: {
         type: String,
