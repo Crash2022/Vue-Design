@@ -1,6 +1,6 @@
 <template>
     <div class="button_wrapper">
-        <button :class="['custom_btn', {custom_btn_secondary: secondary}]">
+        <button :class="['custom_btn', `custom_btn_${color}`]">
             <slot></slot>
         </button>
     </div>
@@ -8,10 +8,9 @@
 
 <script setup>
 const props = defineProps({
-    secondary: {
-        type: Boolean,
-        default: false,
-        required: false
+    color: {
+        type: String,
+        default: 'primary'
     }
 })
 
@@ -40,12 +39,41 @@ const props = defineProps({
         &:hover {
             background-color: var(--primary-hover);
         }
-    }
-    .custom_btn_secondary {
-        background-color: var(--secondary);
 
-        &:hover {
-            background-color: var(--secondary-hover);
+        &_secondary {
+            background-color: var(--secondary);
+
+            &:hover {
+                background-color: var(--secondary-hover);
+            }
+        }
+        &_success {
+            background-color: var(--success);
+
+            &:hover {
+                background-color: var(--success-hover);
+            }
+        }
+        &_info {
+            background-color: var(--info);
+
+            &:hover {
+                background-color: var(--info-hover);
+            }
+        }
+        &_warning {
+            background-color: var(--warning);
+
+            &:hover {
+                background-color: var(--warning-hover);
+            }
+        }
+        &_danger {
+            background-color: var(--danger);
+
+            &:hover {
+                background-color: var(--danger-hover);
+            }
         }
     }
 }

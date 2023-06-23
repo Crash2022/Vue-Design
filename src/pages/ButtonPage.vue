@@ -1,7 +1,23 @@
 <template>
     <div class="buttons_page">
-        <custom-button @click="buttonClick">Button Primary</custom-button>
-        <custom-button @click="buttonClick" :secondary="true">Button Second</custom-button>
+        <CustomButton @click="buttonClick">
+            Button Primary
+        </CustomButton>
+        <CustomButton @click="buttonClick" :color="'secondary'">
+            Button Secondary
+        </CustomButton>
+        <CustomButton @click="buttonClick" :color="'success'">
+            Button Success
+        </CustomButton>
+        <CustomButton @click="buttonClick" :color="'info'">
+            Button Info
+        </CustomButton>
+        <CustomButton @click="buttonClick" :color="'warning'">
+            Button Warning
+        </CustomButton>
+        <CustomButton @click="buttonClick" :color="'danger'">
+            Button Danger
+        </CustomButton>
     </div>
 </template>
 
