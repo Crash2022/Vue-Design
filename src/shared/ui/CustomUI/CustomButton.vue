@@ -5,13 +5,21 @@
                         {'custom_btn_rounded': rounded},
                         {'custom_btn_outlined': outlined}]"
         >
-            <slot></slot>
+            <span v-if="icon">
+                <font-awesome-icon :icon="`fa-regular fa-${icon}`"/>
+            </span>
+            <span v-else>{{label}}</span>
+<!--            <slot v-else></slot>-->
         </button>
     </div>
 </template>
 
 <script setup>
 const props = defineProps({
+    label: {
+        type: String,
+        default: 'Button'
+    },
     color: {
         type: String,
         default: 'primary'
@@ -26,6 +34,10 @@ const props = defineProps({
     },
     rounded: {
         type: Boolean,
+        required: false
+    },
+    icon: {
+        type: String,
         required: false
     },
 })
@@ -119,6 +131,14 @@ const props = defineProps({
         // закругленная кнопка
         &_rounded {
             border-radius: 15px;
+        }
+
+        // кнопка-иконка
+        &_icon {
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
     }
 }

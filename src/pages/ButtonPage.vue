@@ -2,40 +2,31 @@
     <div class="buttons_page">
         <div class="heading_2">Colors</div>
         <div>
-            <CustomButton @click="buttonClick">
-                Button Primary
-            </CustomButton>
-            <CustomButton @click="buttonClick" :color="'secondary'">
-                Button Secondary
-            </CustomButton>
-            <CustomButton @click="buttonClick" :color="'success'">
-                Button Success
-            </CustomButton>
+            <CustomButton @click="buttonClick" :label="'Button Primary'"/>
+            <CustomButton @click="buttonClick" :label="'Button Secondary'" :color="'secondary'"/>
+            <CustomButton @click="buttonClick" :label="'Button Info'" :color="'info'"/>
         </div>
         <div>
-            <CustomButton @click="buttonClick" :color="'info'">
-                Button Info
-            </CustomButton>
-            <CustomButton @click="buttonClick" :color="'warning'">
-                Button Warning
-            </CustomButton>
-            <CustomButton @click="buttonClick" :color="'danger'">
-                Button Danger
-            </CustomButton>
+            <CustomButton @click="buttonClick" :label="'Button Success'" :color="'success'"/>
+            <CustomButton @click="buttonClick" :label="'Button Warning'" :color="'warning'"/>
+            <CustomButton @click="buttonClick" :label="'Button Danger'" :color="'danger'"/>
         </div>
 
         <div class="heading_2">Disabled, Rounded, Outlined</div>
         <div>
-            <CustomButton @click="buttonClick" disabled>
-                Button Primary Disabled
-            </CustomButton>
-            <CustomButton @click="buttonClick" :rounded="true">
-                Button Primary Rounded
-            </CustomButton>
+            <CustomButton @click="buttonClick" :label="'Button Primary Disabled'" disabled/>
+            <CustomButton @click="buttonClick" :label="'Button Primary Rounded'" :rounded="true"/>
+            <CustomButton @click="buttonClick" :label="'Button Outlined'" :outlined="true"/>
+        </div>
 
-            <CustomButton @click="buttonClick" :outlined="true">
-                Button Outlined
-            </CustomButton>
+        <div class="heading-2">Icons</div>
+        <div class="line">
+            <CustomButton color="primary" icon="heart" outlined/>
+            <CustomButton color="second" icon="hand"/>
+            <CustomButton color="success" icon="address-book" outlined/>
+            <CustomButton color="info" icon="credit-card"/>
+            <CustomButton color="warning" icon="lemon" outlined/>
+            <CustomButton color="danger" icon="hourglass"/>
         </div>
     </div>
 </template>
