@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <div :class="['sidebar', {sidebar_isOpen: isOpenSidebar}]">
         <router-link class="sidebar__link"
                      v-for="link in links"
                      :key="link.name"
@@ -12,6 +12,13 @@
 
 <script setup>
 import {ref} from 'vue'
+
+const props = defineProps({
+    isOpenSidebar: {
+        type: Boolean,
+        required: true
+    },
+})
 
 const links = ref([
     {name: 'Главная', href: '/'},
@@ -32,19 +39,19 @@ const links = ref([
     position: fixed;
     left: 0;
     top: 50px;
-    width: 250px;
+    width: 265px; // 250
     height: 100%;
     background: #fff;
-    padding: 20px;
+    padding: 20px 20px 0 35px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     transition: 0.2s;
-    //transform: translateX(-250px);
-    transform: translateX(0px);
+    transform: translateX(-265px); // 250
+    //transform: translateX(0px);
 
-    //&_isopen {
-    //    transform: translateX(0px);
-    //}
-    //
+    &_isOpen {
+        transform: translateX(0px);
+    }
+
     &__link {
         display: block;
         border-radius: 12px;

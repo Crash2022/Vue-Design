@@ -4,9 +4,6 @@
             <div class="movies_button">
                 <custom-button @click="$router.push('/')">Главная</custom-button>
             </div>
-            <div class="movies_button">
-                <custom-button @click="$router.push('/typography')">Типография</custom-button>
-            </div>
 <!--            <div>-->
 <!--                <router-link to="/about">Обо мне</router-link>-->
 <!--            </div>-->
