@@ -20,7 +20,7 @@ const emits = defineEmits(['update:checked', 'updateCheckboxGroup'])
 
 const onChangeHandler = (e) => {
     if (props.group) {
-        emits('updateCheckboxGroup', {optionId: props.id, checked: e.target.value})
+        emits('updateCheckboxGroup', {optionId: props.id, checked: e.target.checked})
     } else {
         emits('update:checked', e.target.checked)
     }

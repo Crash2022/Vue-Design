@@ -17,8 +17,6 @@ import CustomCheckbox from "@/shared/ui/CustomUI/CustomCheckbox.vue"
 const emit = defineEmits(['update:value'])
 
 const updateGroupHandler = (params) => {
-    // console.log('update id', params.optionId)
-
     const updateValue = [...props.value]
 
     if (params.checked) {
