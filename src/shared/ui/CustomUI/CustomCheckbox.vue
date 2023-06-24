@@ -38,12 +38,12 @@ const props = defineProps({
 
 .container:hover input ~ .checkmark {
     background-color: #ccc;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
 }
 
 .container input:checked ~ .checkmark {
-    background-color: var(--primary-500);
-    transition: all .8s ease;
+    background-color: var(--primary);
+    transition: all 0.8s ease;
 }
 
 .container input:checked ~ .checkmark:after {
