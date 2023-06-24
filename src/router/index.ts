@@ -3,6 +3,7 @@ import HomePage from '@/pages/HomePage.vue'
 import TypographyPage from "@/pages/TypographyPage.vue"
 import ButtonsPage from "@/pages/ButtonsPage.vue"
 import InputsPage from '@/pages/InputsPage.vue'
+import CheckboxPage from "@/pages/CheckboxPage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -20,6 +21,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/inputs',
     component: InputsPage
+  },
+  {
+    path: '/checkbox',
+    component: CheckboxPage
   },
 ]
 
