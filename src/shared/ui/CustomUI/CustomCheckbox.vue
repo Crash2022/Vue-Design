@@ -52,7 +52,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .checkbox_container {
-
+    margin-bottom: 10px;
 }
 .checkbox_wrapper {
     position: relative;
