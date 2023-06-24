@@ -8,7 +8,7 @@
                    :value="value"
                    :checked="checked"
                    :disabled="disabled"
-                   @input="onChangeHandler($event)"
+                   @input="onChangeHandler"
             />
             <span class="checkmark"></span>
         </label>
