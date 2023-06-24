@@ -1,22 +1,60 @@
 <template>
-    <label class="container">
-        <span>{{label}}</span>
-        <input type="checkbox"/>
-        <span class="checkmark"></span>
-    </label>
+    <div class="checkbox_container">
+        <label class="checkbox_wrapper">
+            <span>{{label}}</span>
+            <input type="checkbox"
+                   :id="id"
+                   :name="name"
+                   :value="value"
+                   :checked="checked"
+                   :disabled="disabled"
+                   @input="onChangeHandler($event)"
+            />
+            <span class="checkmark"></span>
+        </label>
+    </div>
 </template>
 
 <script setup>
+const emit = defineEmits(['update:checked'])
+
+const onChangeHandler = (e) => {
+    emit('update:checked', e.target.checked)
+}
+
 const props = defineProps({
+    id: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    value: {
+        type: String,
+        default: ''
+    },
+    checked: {
+        type: Boolean,
+        default: false
+    },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
     label: {
         type: String,
         default: 'Checkbox'
-    }
+    },
 })
 </script>
 
 <style lang="scss" scoped>
-.container {
+.checkbox_container {
+
+}
+.checkbox_wrapper {
     position: relative;
     padding-left: 30px;
     padding-top: 2px;
@@ -28,7 +66,7 @@ const props = defineProps({
     user-select: none;
 }
 
-.container input {
+.checkbox_wrapper input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -36,21 +74,26 @@ const props = defineProps({
     width: 0;
 }
 
-.container:hover input ~ .checkmark {
+.checkbox_wrapper:hover input ~ .checkmark {
     background-color: #ccc;
     transition: all 0.8s ease;
 }
 
-.container input:checked ~ .checkmark {
+.checkbox_wrapper input:checked ~ .checkmark {
     background-color: var(--primary);
     transition: all 0.8s ease;
 }
 
-.container input:checked ~ .checkmark:after {
+.checkbox_wrapper input:disabled ~ .checkmark {
+    background-color: #ccc;
+    cursor: default;
+}
+
+.checkbox_wrapper input:checked ~ .checkmark:after {
     display: block;
 }
 
-.container .checkmark:after {
+.checkbox_wrapper .checkmark:after {
     left: 7px;
     top: 3px;
     width: 5px;
