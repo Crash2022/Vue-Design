@@ -17,7 +17,7 @@ import CustomCheckbox from "@/shared/ui/CustomUI/CustomCheckbox.vue"
 const emit = defineEmits(['update:value'])
 
 const onUpdateGroupHandler = (params) => {
-    const updateValue = [...props.value]
+    let updateValue = [...props.value]
 
     if (params.checked) {
         updateValue.push(params.optionId)
@@ -32,6 +32,10 @@ const props = defineProps({
         type: String,
         required: true
     },
+    value: {
+        type: Array,
+        required: true
+    },
     options: {
         type: Array,
         required: true,
@@ -40,10 +44,6 @@ const props = defineProps({
             const hasNameKey = value.every(options => Object.keys(options).includes('name'))
             return hasIdKey && hasNameKey
         }
-    },
-    value: {
-        type: Array,
-        required: true
     },
 })
 </script>
