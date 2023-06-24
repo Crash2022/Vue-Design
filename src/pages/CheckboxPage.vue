@@ -25,11 +25,25 @@
                                v-model:value="selectedCheckbox"
         />
     </div>
+
+    <div class="heading_2">Switch</div>
+    <div>
+        <div>Checked: {{switchProfessional}}</div>
+        <checkbox-switch
+                label="Работаю"
+                id="switch"
+                name="switch"
+                value="Works"
+                type="switch"
+                v-model:checked="switchProfessional"
+        />
+    </div>
 </template>
 
 <script setup>
 import CustomCheckbox from "@/shared/ui/CustomUI/CustomCheckbox.vue"
 import CustomCheckboxGroup from "@/shared/ui/CustomUI/CustomCheckboxGroup.vue"
+import CheckboxSwitch from "@/shared/ui/CustomUI/CheckboxSwitch.vue"
 import {ref} from 'vue'
 
 // export type CheckboxListType = {
@@ -49,6 +63,8 @@ const checkboxList = ref([
     {id: '4', name: 'Rublev'},
     {id: '5', name: 'Medvedev'},
 ])
+
+const switchProfessional = ref(false)
 </script>
 
 <style lang="scss" scoped>
