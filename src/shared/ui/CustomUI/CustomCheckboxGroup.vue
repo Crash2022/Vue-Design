@@ -6,7 +6,7 @@
                          :name="name"
                          :checked="value.includes(option.id)"
                          group
-                         @updateCheckboxGroup="onUpdateGroupHandler"
+                         @updateCheckboxGroup="updateGroupHandler"
         />
     </div>
 </template>
@@ -16,7 +16,8 @@ import CustomCheckbox from "@/shared/ui/CustomUI/CustomCheckbox.vue"
 
 const emit = defineEmits(['update:value'])
 
-const onUpdateGroupHandler = (params) => {
+const updateGroupHandler = (params) => {
+    console.log('update group')
     let updateValue = [...props.value]
 
     if (params.checked) {

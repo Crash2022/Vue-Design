@@ -21,7 +21,7 @@
     </div>
     <div>
         <custom-checkbox-group :options="checkboxList"
-                               name="ATP_Players"
+                               name="players"
                                v-model:value="selectedCheckbox"
         />
     </div>
@@ -40,6 +40,8 @@ import {ref} from 'vue'
 const checkboxActive = ref(false)
 const checkboxDisabled = ref(true)
 
+const selectedCheckbox = ref(['1', '2', '3'])
+
 const checkboxList = ref([
     {id: '1', name: 'Djokovic'},
     {id: '2', name: 'Federrer'},
@@ -47,9 +49,6 @@ const checkboxList = ref([
     {id: '4', name: 'Rublev'},
     {id: '5', name: 'Medvedev'},
 ])
-
-const selectedCheckbox = ref(['1', '2'])
-
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,6 @@
             <CustomButton @click="$router.push('/')"
                           :label="'Главная'"
                           :color="'warning'"
-                          :outlined="true"
             />
 <!--            <div class="movies_button">-->
 <!--                <custom-button @click="$router.push('/')">Главная</custom-button>-->

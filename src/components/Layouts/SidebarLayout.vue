@@ -63,6 +63,7 @@ const links = ref([
         //transition: 0.1s;
         font-weight: bold;
         margin-bottom: 16px;
+        text-align: center;
 
         &:hover {
             //border-color: var(--primary);
