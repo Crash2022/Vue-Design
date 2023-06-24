@@ -16,8 +16,14 @@
     </div>
 
     <div class="heading_2">Checkbox Group</div>
-    <div class="checkbox_group">
-        <custom-checkbox-group :options="checkboxList" :name="'ATP_Players'"/>
+    <div style="margin-bottom: 10px">
+        {{selectedCheckbox}}
+    </div>
+    <div>
+        <custom-checkbox-group :options="checkboxList"
+                               name="ATP_Players"
+                               v-model:value="selectedCheckbox"
+        />
     </div>
 </template>
 
@@ -42,7 +48,7 @@ const checkboxList = ref([
     {id: '5', name: 'Medvedev'},
 ])
 
-const selectedCheckbox = ref([])
+const selectedCheckbox = ref(['1', '2'])
 
 </script>
 
@@ -51,11 +57,5 @@ const selectedCheckbox = ref([])
     > div {
         margin-bottom: 10px;
     }
-}
-
-.checkbox_group {
-    //> div {
-    //    margin-bottom: 10px;
-    //}
 }
 </style>

@@ -16,10 +16,14 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['update:checked'])
+const emits = defineEmits(['update:checked', 'updateCheckboxGroup'])
 
 const onChangeHandler = (e) => {
-    emit('update:checked', e.target.checked)
+    if (props.group) {
+        emits('updateCheckboxGroup', {optionId: props.id, checked: e.target.value})
+    } else {
+        emits('update:checked', e.target.checked)
+    }
 }
 
 const props = defineProps({
@@ -46,6 +50,10 @@ const props = defineProps({
     label: {
         type: String,
         default: 'Checkbox'
+    },
+    group: {
+        type: Boolean,
+        default: false
     },
 })
 </script>
