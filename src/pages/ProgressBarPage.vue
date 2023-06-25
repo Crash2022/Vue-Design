@@ -5,10 +5,15 @@
     <custom-progress-bar percent="50" max-width="500px" color="warning"/>
 
     <custom-progress-bar :percent="currentPercent" max-width="600px"/>
-    <custom-button @click="addProgressPercent"
-                   :label="'Добавить 10%'"
-                   :disabled="currentPercent === 100"
-    />
+    <div class="progress_buttons">
+        <custom-button @click="addProgressPercent"
+                       :label="'Добавить 10%'"
+                       :disabled="currentPercent === 100"
+        />
+        <custom-button @click="clearProgressPercent"
+                       :label="'Сбросить до 10%'"
+        />
+    </div>
 </template>
 
 <script setup>
@@ -21,8 +26,14 @@ const addProgressPercent = () => {
     if (currentPercent.value === 100) return
     currentPercent.value += 30
 }
+const clearProgressPercent = () => {
+    currentPercent.value = 10
+}
 </script>
 
 <style lang="scss" scoped>
-
+.progress_buttons {
+    display: flex;
+    gap: 20px;
+}
 </style>
