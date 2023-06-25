@@ -2,6 +2,7 @@
     <div class="button_wrapper">
         <button @click="clickHandler"
                 :disabled="disabled"
+                :style="[{'min-width': minWidth}]"
                 :class="['custom_btn', `custom_btn_${color}`,
                         {'custom_btn_rounded': rounded},
                         {'custom_btn_outlined': outlined},
@@ -54,6 +55,10 @@ const props = defineProps({
         default: 'normal',
         required: false
     },
+    minWidth: {
+        type: String,
+        default: '100px'
+    },
 })
 </script>
 
@@ -68,7 +73,7 @@ const props = defineProps({
         cursor: pointer;
         height: 40px;
         //min-width: 100px;
-        width: 100%; // можно пофиксить
+        //width: 100%;
         font-size: 18px;
         display: flex;
         align-items: center;

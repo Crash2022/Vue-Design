@@ -3,11 +3,18 @@
     <custom-progress-bar percent="10" max-width="300px"/>
     <custom-progress-bar percent="30" max-width="400px" color="success"/>
     <custom-progress-bar percent="50" max-width="500px" color="warning"/>
+
+    <custom-progress-bar percent="50" max-width="600px"/>
+    <custom-button @click="addProgressPercent" :label="'Добавить 10%'"/>
 </template>
 
 <script setup>
-
 import CustomProgressBar from '@/shared/ui/CustomUI/CustomProgressBar.vue'
+import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
+
+const addProgressPercent = () => {
+
+}
 </script>
 
 <style lang="scss" scoped>

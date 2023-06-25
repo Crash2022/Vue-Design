@@ -35,7 +35,7 @@
                           :error="vField.fieldSecretWord.$errors"
             />
             <div class="send">
-                <custom-button type="submit" :label="'Отправить'"/>
+                <custom-button type="submit" :label="'Отправить'" :min-width="'300px'"/>
             </div>
         </form>
     </div>
