@@ -4,6 +4,7 @@ import TypographyPage from "@/pages/TypographyPage.vue"
 import ButtonsPage from "@/pages/ButtonsPage.vue"
 import InputsPage from '@/pages/InputsPage.vue'
 import CheckboxPage from "@/pages/CheckboxPage.vue"
+import RadiobuttonPage from "@/pages/RadiobuttonPage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -25,6 +26,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/checkbox',
     component: CheckboxPage
+  },
+  {
+    path: '/radiobutton',
+    component: RadiobuttonPage
   },
 ]
 

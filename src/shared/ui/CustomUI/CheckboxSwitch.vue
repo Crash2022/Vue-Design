@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const emits = defineEmits(['update:checked', 'updateCheckboxGroup']);
+const emits = defineEmits(['update:checked', 'updateCheckboxGroup'])
 
 const props = defineProps({
     type: {
