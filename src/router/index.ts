@@ -6,6 +6,7 @@ import InputsPage from '@/pages/InputsPage.vue'
 import CheckboxPage from "@/pages/CheckboxPage.vue"
 import RadioButtonsPage from "@/pages/RadioButtonsPage.vue"
 import TabsPage from "@/pages/TabsPage.vue"
+import ProgressBarPage from '@/pages/ProgressBarPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -29,12 +30,16 @@ const routes: Array<RouteRecordRaw> = [
     component: CheckboxPage
   },
   {
-    path: '/radiobuttons',
+    path: '/radio-buttons',
     component: RadioButtonsPage
   },
   {
     path: '/tabs',
     component: TabsPage
+  },
+  {
+    path: '/progress',
+    component: ProgressBarPage
   },
 ]
 

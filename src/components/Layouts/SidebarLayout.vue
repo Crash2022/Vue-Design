@@ -27,8 +27,9 @@ const links = ref([
     {name: 'Кнопки', href: '/buttons'},
     {name: 'Инпуты', href: '/inputs'},
     {name: 'Чекбоксы', href: '/checkbox'},
-    {name: 'Радио-кнопки', href: '/radiobuttons'},
+    {name: 'Радио-кнопки', href: '/radio-buttons'},
     {name: 'Табы', href: '/tabs'},
+    {name: 'Прогресс-бар', href: '/progress'},
 ])
 
 // экспорт без setup
