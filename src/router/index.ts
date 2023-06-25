@@ -5,6 +5,7 @@ import ButtonsPage from "@/pages/ButtonsPage.vue"
 import InputsPage from '@/pages/InputsPage.vue'
 import CheckboxPage from "@/pages/CheckboxPage.vue"
 import RadiobuttonPage from "@/pages/RadiobuttonPage.vue"
+import TabsPage from "@/pages/TabsPage.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -30,6 +31,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/radiobutton',
     component: RadiobuttonPage
+  },
+  {
+    path: '/tabs',
+    component: TabsPage
   },
 ]
 
