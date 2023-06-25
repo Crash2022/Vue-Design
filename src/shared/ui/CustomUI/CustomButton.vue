@@ -57,7 +57,7 @@ const props = defineProps({
     },
     minWidth: {
         type: String,
-        default: '100px'
+        default: '100%'
     },
 })
 </script>
