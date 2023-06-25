@@ -35,7 +35,7 @@
                           :error="vField.fieldSecretWord.$errors"
             />
             <div class="send">
-                <CustomButton type="submit" :label="'Отправить'"/>
+                <custom-button type="submit" :label="'Отправить'"/>
             </div>
         </form>
     </div>
@@ -95,8 +95,9 @@ const submitForm = () => {
 
     form {
         .send {
-            display: flex;
-            justify-content: flex-end;
+            width: 300px;
+            //display: flex;
+            //justify-content: flex-end;
         }
     }
 }

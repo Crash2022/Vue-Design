@@ -68,7 +68,7 @@ const props = defineProps({
         cursor: pointer;
         height: 40px;
         //min-width: 100px;
-        //width: 100%;
+        width: 100%; // можно пофиксить
         font-size: 18px;
         display: flex;
         align-items: center;
