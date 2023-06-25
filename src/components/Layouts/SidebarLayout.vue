@@ -25,8 +25,8 @@ const links = ref([
     {name: 'Типография', href: '/typography'},
     {name: 'Кнопки', href: '/buttons'},
     {name: 'Инпуты', href: '/inputs'},
-    {name: 'Чекбокс', href: '/checkbox'},
-    {name: 'Радио-кнопка', href: '/radiobutton'},
+    {name: 'Чекбоксы', href: '/checkbox'},
+    {name: 'Радио-кнопки', href: '/radiobuttons'},
     {name: 'Табы', href: '/tabs'},
 ])
 

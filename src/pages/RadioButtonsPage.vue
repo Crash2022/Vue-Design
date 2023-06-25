@@ -1,7 +1,7 @@
 <template>
     <div class="heading_2">RadioButton</div>
     <div class="selected_radio">Текущее значение: {{selectedRadiobutton}}</div>
-    <div v-for="player in radiobuttonList" :key="player.id">
+    <div v-for="player in radiobuttonList" :key="player.id" class="radio_list">
         <custom-radiobutton :name="'radiobutton-players'"
                             :id="player.id"
                             :value="player.name"
@@ -41,5 +41,8 @@ const radiobuttonDisabled = ref({id: 'rd1', name: 'Djokovic'})
 <style lang="scss" scoped>
 .selected_radio {
     margin-bottom: 10px;
+}
+.radio_list {
+
 }
 </style>

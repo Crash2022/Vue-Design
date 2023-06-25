@@ -5,8 +5,8 @@
                     :selectedTab="selectedTab"
                     @changeTab="changeTabHandler"
         >
-            <div v-if="selectedTab === 'React'">React</div>
-            <div v-if="selectedTab === 'Vue'">Vue</div>
+            <div v-if="selectedTab === 'React'">React Content</div>
+            <div v-if="selectedTab === 'Vue'">Vue Content</div>
             <div v-if="selectedTab === 'About'">Custom UI-Kit</div>
         </custom-tab>
     </div>
