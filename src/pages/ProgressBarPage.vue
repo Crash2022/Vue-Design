@@ -16,13 +16,24 @@
 
     <div class="heading_2">Progress Circle</div>
     <custom-progress-circle :percent="currentCirclePercent" color="danger"/>
-    <div class="progress_buttons">
+    <div class="progress_buttons" style="margin-bottom: 20px">
         <custom-button @click="addCircleProgressPercent"
                        :label="'Добавить 25%'"
                        :disabled="currentCirclePercent === 100"
         />
         <custom-button @click="clearCircleProgressPercent"
                        :label="'Сбросить'"
+        />
+    </div>
+
+    <custom-progress-circle :percent="currentTimerCirclePercent" color="secondary"/>
+    <div class="progress_buttons">
+        <custom-button @click="startCircleProgressPercent"
+                       :label="'Старт'"
+                       :disabled="currentCirclePercent === 100"
+        />
+        <custom-button @click="stopCircleProgressPercent"
+                       :label="'Стоп'"
         />
     </div>
 </template>
@@ -34,7 +45,9 @@ import CustomProgressCircle from '@/shared/ui/CustomUI/CustomProgressCircle.vue'
 import {ref} from 'vue'
 
 const currentPercent = ref(10)
-const currentCirclePercent = ref(0)
+const currentCirclePercent = ref(25)
+const currentTimerCirclePercent = ref(0)
+
 const addProgressPercent = () => {
     if (currentPercent.value === 100) return
     currentPercent.value += 30
@@ -49,6 +62,14 @@ const addCircleProgressPercent = () => {
 }
 const clearCircleProgressPercent = () => {
     currentCirclePercent.value = 0
+}
+
+const startCircleProgressPercent = () => {
+    if (currentCirclePercent.value === 100) return
+    currentTimerCirclePercent.value += 1
+}
+const stopCircleProgressPercent = () => {
+    currentTimerCirclePercent.value = 0
 }
 </script>
 
