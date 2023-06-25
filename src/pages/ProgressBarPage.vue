@@ -51,8 +51,7 @@ import {ref, onMounted} from 'vue'
 const currentPercent = ref<number>(10)
 const currentCirclePercent = ref<number>(25)
 const currentTimerCirclePercent = ref<number>(0)
-// const currentTimerCirclePercentButton = ref(true)
-let progressInterval = ref<number | undefined>(undefined)
+const progressInterval = ref<number | undefined>(undefined)
 
 const addProgressPercent = () => {
     if (currentPercent.value === 100) return
@@ -70,14 +69,13 @@ const clearCircleProgressPercent = () => {
     currentCirclePercent.value = 0
 }
 
-// let progressInterval;
 const startTimerCircleProgressPercent = () => {
     progressInterval.value = setInterval(() => {
         if (currentTimerCirclePercent.value >= 100) {
             clearInterval(progressInterval)
             // return
         } else {
-            currentTimerCirclePercent.value += 10
+            currentTimerCirclePercent.value += 50
         }
     }, 1000)
 }
