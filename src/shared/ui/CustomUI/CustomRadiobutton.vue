@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['update:checked'])
+const emit = defineEmits(['update:checkedValue'])
 
 const props = defineProps({
     name: {
@@ -35,8 +35,8 @@ const props = defineProps({
         default: ''
     },
     checked: {
-        type: Object,
-        default: {}
+        type: Boolean,
+        default: false
     },
     disabled: {
         type: Boolean,
@@ -45,7 +45,7 @@ const props = defineProps({
 })
 
 const onChangeRadioButton = (event) => {
-    emit('update:checked', event.target.checked)
+    emit('update:checkedValue', event.target.value)
 
 }
 </script>

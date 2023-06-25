@@ -1,12 +1,12 @@
 <template>
     <div class="heading_2">RadioButton</div>
-    <div>{{selectedRadiobutton}}</div>
+    <div class="selected_radio">Текущее значение: {{selectedRadiobutton}}</div>
     <div v-for="player in radiobuttonList" :key="player.id">
-        <custom-radiobutton :id="player.id"
-                            :name="'radiobutton-players'"
+        <custom-radiobutton :name="'radiobutton-players'"
+                            :id="player.id"
                             :value="player.name"
                             :label="player.name"
-                            v-model:checked="selectedRadiobutton"
+                            v-model:checkedValue="selectedRadiobutton"
         />
     </div>
 </template>
@@ -15,7 +15,7 @@
 import CustomRadiobutton from "@/shared/ui/CustomUI/CustomRadiobutton.vue"
 import {ref} from 'vue'
 
-const selectedRadiobutton = ref({})
+const selectedRadiobutton = ref('')
 
 const radiobuttonList = ref([
     {id: 'r1', name: 'Djokovic'},
@@ -27,5 +27,7 @@ const radiobuttonList = ref([
 </script>
 
 <style lang="scss" scoped>
-
+.selected_radio {
+    margin-bottom: 10px;
+}
 </style>
