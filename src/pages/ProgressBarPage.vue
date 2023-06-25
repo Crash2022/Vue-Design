@@ -2,9 +2,8 @@
     <div class="heading_2">Progress Bar</div>
     <custom-progress-bar percent="10" max-width="300px"/>
     <custom-progress-bar percent="30" max-width="400px" color="success"/>
-    <custom-progress-bar percent="50" max-width="500px" color="warning"/>
 
-    <custom-progress-bar :percent="currentPercent" max-width="600px"/>
+    <custom-progress-bar :percent="currentPercent" color="warning" max-width="600px"/>
     <div class="progress_buttons">
         <custom-button @click="addProgressPercent"
                        :label="'Добавить 10%'"
@@ -19,8 +18,8 @@
     <custom-progress-circle :percent="currentCirclePercent" color="danger"/>
     <div class="progress_buttons">
         <custom-button @click="addCircleProgressPercent"
-                       :label="'Добавить 10%'"
-                       :disabled="currentPercent === 100"
+                       :label="'Добавить 25%'"
+                       :disabled="currentCirclePercent === 100"
         />
         <custom-button @click="clearCircleProgressPercent"
                        :label="'Сбросить'"
