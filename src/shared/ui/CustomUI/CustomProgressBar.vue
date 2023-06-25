@@ -30,6 +30,7 @@ const props = defineProps({
 .progress {
     height: 10px;
     border-radius: 4px;
+
     &_container {
         margin-bottom: 20px;
         overflow: hidden;
@@ -38,12 +39,11 @@ const props = defineProps({
         background: #000;
         height: 100%;
         border-radius: 4px;
-        transition: .5s;
+        transition: 0.5s;
     }
     &_percent {
         display: block;
         text-align: center;
-
         font-weight: bold;
         font-size: 17px;
         margin-bottom: 10px;

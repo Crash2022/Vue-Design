@@ -1,7 +1,7 @@
 <template>
     <div class="heading_2">Progress Bar</div>
     <div>
-        <custom-progress-bar percent=""/>
+        <custom-progress-bar percent="50" max-width="500px"/>
     </div>
 </template>
 
