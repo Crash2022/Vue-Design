@@ -30,6 +30,7 @@ const links = ref([
     {name: 'Радио-кнопки', href: '/radio-buttons'},
     {name: 'Табы', href: '/tabs'},
     {name: 'Прогресс-бар', href: '/progress'},
+    {name: 'Таблица', href: '/table'},
 ])
 
 // экспорт без setup

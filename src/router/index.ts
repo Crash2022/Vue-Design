@@ -7,6 +7,7 @@ import CheckboxPage from "@/pages/CheckboxPage.vue"
 import RadioButtonsPage from "@/pages/RadioButtonsPage.vue"
 import TabsPage from "@/pages/TabsPage.vue"
 import ProgressBarPage from '@/pages/ProgressBarPage.vue'
+import TablePage from '@/pages/TablePage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -40,6 +41,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/progress',
     component: ProgressBarPage
+  },
+  {
+    path: '/table',
+    component: TablePage
   },
 ]
 
