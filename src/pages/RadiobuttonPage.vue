@@ -12,7 +12,7 @@
 
     <div class="heading_2">Disabled RadioButton</div>
     <custom-radiobutton :name="'radiobutton-disabled'"
-                        :id="'player-disabled'"
+                        :id="radiobuttonDisabled.id"
                         :value="radiobuttonDisabled.name"
                         :label="radiobuttonDisabled.name"
                         v-model:checkedValue="selectedRadiobuttonDisabled"

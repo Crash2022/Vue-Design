@@ -76,7 +76,7 @@ const onChangeRadioButton = (event) => {
             background-position: center center;
             background-size: 50% 50%;
             border: 1px solid #adb5bd;
-            //border-radius: 6px;
+            //border-radius: 6px; // квадратный вариант
             border-radius: 50%;
         }
         &:checked + label::before {
