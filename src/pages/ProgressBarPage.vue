@@ -75,7 +75,7 @@ const startTimerCircleProgressPercent = () => {
             clearInterval(progressInterval)
             // return
         } else {
-            currentTimerCirclePercent.value += 50
+            currentTimerCirclePercent.value += 25
         }
     }, 1000)
 }
@@ -84,6 +84,7 @@ const stopTimerCircleProgressPercent = () => {
 }
 const clearTimerCircleProgressPercent = () => {
     currentTimerCirclePercent.value = 0
+    clearInterval(progressInterval.value)
     progressInterval.value = undefined
 }
 
