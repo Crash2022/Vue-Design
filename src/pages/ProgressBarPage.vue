@@ -1,7 +1,7 @@
 <template>
     <div class="heading_2">Progress Bar</div>
-    <custom-progress-bar percent="10" max-width="300px"/>
-    <custom-progress-bar percent="30" max-width="400px" color="success"/>
+    <custom-progress-bar :percent="10" max-width="300px"/>
+    <custom-progress-bar :percent="30" max-width="400px" color="success"/>
 
     <custom-progress-bar :percent="currentPercent" color="warning" max-width="600px"/>
     <div class="progress_buttons">
@@ -28,12 +28,15 @@
 
     <custom-progress-circle :percent="currentTimerCirclePercent" color="secondary"/>
     <div class="progress_buttons">
-        <custom-button @click="startCircleProgressPercent"
+        <custom-button @click="startTimerCircleProgressPercent"
                        :label="'Старт'"
-                       :disabled="currentCirclePercent === 100"
+                       :disabled="currentTimerCirclePercent === 100"
         />
-        <custom-button @click="stopCircleProgressPercent"
+        <custom-button @click="stopTimerCircleProgressPercent"
                        :label="'Стоп'"
+        />
+        <custom-button @click="clearTimerCircleProgressPercent"
+                       :label="'Сброс'"
         />
     </div>
 </template>
@@ -64,11 +67,20 @@ const clearCircleProgressPercent = () => {
     currentCirclePercent.value = 0
 }
 
-const startCircleProgressPercent = () => {
-    if (currentCirclePercent.value === 100) return
-    currentTimerCirclePercent.value += 1
+let progressInterval;
+const startTimerCircleProgressPercent = () => {
+    if (currentCirclePercent.value > 100) {
+        clearInterval(progressInterval)
+        return
+    }
+    progressInterval = setInterval(() => {
+        currentTimerCirclePercent.value += 50
+    }, 1000)
 }
-const stopCircleProgressPercent = () => {
+const stopTimerCircleProgressPercent = () => {
+    clearInterval(progressInterval)
+}
+const clearTimerCircleProgressPercent = () => {
     currentTimerCirclePercent.value = 0
 }
 </script>
