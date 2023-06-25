@@ -9,6 +9,15 @@
                             v-model:checkedValue="selectedRadiobutton"
         />
     </div>
+
+    <div class="heading_2">Disabled RadioButton</div>
+    <custom-radiobutton :name="'radiobutton-disabled'"
+                        :id="'player-disabled'"
+                        :value="radiobuttonDisabled.name"
+                        :label="radiobuttonDisabled.name"
+                        v-model:checkedValue="selectedRadiobuttonDisabled"
+                        :disabled="true"
+    />
 </template>
 
 <script setup>
@@ -16,6 +25,7 @@ import CustomRadiobutton from "@/shared/ui/CustomUI/CustomRadiobutton.vue"
 import {ref} from 'vue'
 
 const selectedRadiobutton = ref('')
+const selectedRadiobuttonDisabled = ref('')
 
 const radiobuttonList = ref([
     {id: 'r1', name: 'Djokovic'},
@@ -24,6 +34,8 @@ const radiobuttonList = ref([
     {id: 'r4', name: 'Rublev'},
     {id: 'r5', name: 'Medvedev'},
 ])
+
+const radiobuttonDisabled = ref({id: 'rd1', name: 'Djokovic'})
 </script>
 
 <style lang="scss" scoped>
