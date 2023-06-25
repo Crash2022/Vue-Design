@@ -72,12 +72,13 @@ const clearCircleProgressPercent = () => {
 
 // let progressInterval;
 const startTimerCircleProgressPercent = () => {
-    // if (currentCirclePercent.value === 100) {
-    //     clearInterval(progressInterval)
-    //     return
-    // }
     progressInterval.value = setInterval(() => {
-        currentTimerCirclePercent.value += 50
+        if (currentTimerCirclePercent.value >= 100) {
+            clearInterval(progressInterval)
+            // return
+        } else {
+            currentTimerCirclePercent.value += 10
+        }
     }, 1000)
 }
 const stopTimerCircleProgressPercent = () => {
@@ -89,13 +90,14 @@ const clearTimerCircleProgressPercent = () => {
 }
 
 // onMounted(() => {
-//         // if (currentCirclePercent.value > 100) {
-//         //     clearInterval(progressInterval.value)
-//         //     return
-//         // }
-//         progressInterval = setInterval(() => {
-//             currentTimerCirclePercent.value += 50
-//         }, 1000)
+//     progressInterval.value = setInterval(() => {
+//         if (currentTimerCirclePercent.value >= 100) {
+//             clearInterval(progressInterval)
+//             // return
+//         } else {
+//             currentTimerCirclePercent.value += 10
+//         }
+//     }, 1000)
 // })
 </script>
 
