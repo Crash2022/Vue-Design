@@ -1,6 +1,7 @@
 <template>
     <div :class="['sidebar', {sidebar_isOpen: isOpenSidebar}]">
         <router-link class="sidebar__link"
+                     active-class="active"
                      v-for="link in links"
                      :key="link.name"
                      :to="link.href"
@@ -51,7 +52,6 @@ const links = ref([
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     transition: 0.2s;
     transform: translateX(-265px); // 250
-    //transform: translateX(0px);
 
     &_isOpen {
         transform: translateX(0px);
@@ -72,6 +72,11 @@ const links = ref([
             border: 2px solid var(--primary);
             padding: 9px;
         }
+    }
+
+    .active {
+        border: 2px solid var(--primary);
+        padding: 9px;
     }
 }
 </style>
