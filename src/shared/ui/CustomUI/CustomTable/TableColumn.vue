@@ -1,5 +1,8 @@
 <template>
     <div class="table_column">
+        <span v-if="columnTitle" class="table_column__title">
+            {{columnTitle}}:
+        </span>
         <slot v-if="!isImage"></slot>
         <img v-else class="table_column_image"
              :src="imageSrc" alt="table-image"
@@ -14,6 +17,10 @@ const props = defineProps({
         required: false
     },
     imageSrc: {
+        type: String,
+        required: false
+    },
+    columnTitle: {
         type: String,
         required: false
     }
@@ -38,6 +45,7 @@ const props = defineProps({
 
         @media screen and (max-width: 767px) {
             display: inline-block;
+            font-weight: bold;
         }
     }
 }

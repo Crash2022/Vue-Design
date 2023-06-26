@@ -1,22 +1,30 @@
 <template>
     <div class="heading_2">Table Page</div>
     <div>
+        <div>sortType: {{sortType}}</div>
+        <div>sortField: {{sortField}}</div>
+    </div>
+    <div>
         <TableBasic :header="tableHeaders"
                     :column-templates="tableSizeColumns"
+                    @update-sort="setSort"
         >
-            <TableRow :column-templates="tableSizeColumns"
-                      v-for="book in books" :key="book.id"
+            <TableRow v-for="book in sortedBooks" :key="book.id"
+                      :column-templates="tableSizeColumns"
+                      :bg-row="book.bg"
             >
-                <TableColumn>
+                <TableColumn :column-title="tableHeaders[0]">
                     {{book.id}}
                 </TableColumn>
-                <TableColumn>
+                <TableColumn :column-title="tableHeaders[1]">
                     {{book.author}}
                 </TableColumn>
-                <TableColumn>
+                <TableColumn :column-title="tableHeaders[2]">
                     {{book.title}}
                 </TableColumn>
-                <TableColumn :isImage="true" :imageSrc="book.image">
+                <TableColumn :isImage="true"
+                             :imageSrc="book.image"
+                >
 <!--                    <img :src="book.image" alt="book-image">-->
                 </TableColumn>
                 <TableColumn>
@@ -32,9 +40,9 @@ import TableBasic from '@/shared/ui/CustomUI/CustomTable/TableBasic.vue'
 import TableRow from '@/shared/ui/CustomUI/CustomTable/TableRow.vue'
 import TableColumn from '@/shared/ui/CustomUI/CustomTable/TableColumn.vue'
 import CustomButton from '@/shared/ui/CustomUI/CustomButton.vue'
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
 
-const tableHeaders = ['ID', 'Автор', 'Название', 'Обложка']
+const tableHeaders = ['ID', 'Author', 'Title', 'Cover']
 const tableSizeColumns = '50px 1fr 2fr 150px 140px'
 
 const books = ref([
@@ -60,6 +68,33 @@ const books = ref([
         bg: '#00C48C'
     }
 ])
+
+const sortField = ref('id')
+const sortType = ref('asc')
+
+const sortedBooks = computed(() => {
+    return books.value.sort((a,b) => {
+        // a[sortType.value].localeCompare(b[sortType.value])
+
+        let modifier = 1
+        if (sortType.value === 'desc') modifier = -1
+        if (a[sortField.value] < b[sortField.value]) return -1*modifier
+        if (a[sortField.value] > b[sortField.value]) return modifier
+        return 0
+    })
+})
+
+const setSort = (headerName) => {
+    if (sortField.value === headerName) {
+        if (sortType.value === 'asc') {
+            sortType.value = 'desc'
+        } else {
+            sortType.value = 'asc'
+        }
+    } else {
+        sortField.value = headerName
+    }
+}
 </script>
 
 <style lang="scss" scoped>
